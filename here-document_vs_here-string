@@ -79,7 +79,7 @@ foo3
 here-document (<<) can take a pipe (|) or logical operators ( &&, || )
 example7:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-[root@ol8 ~]# cat << EOF | tr "o" "@@"
+[root@ol8 ~]# cat << EOF | tr "o" "@"
 > foo1
 > foo2
 > foo3
