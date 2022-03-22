@@ -1,0 +1,72 @@
+[root@ol8 ~]# myArray=(foo1 foo2 foo3)
+[root@ol8 ~]# echo ${myArray[1]}
+foo2
+[root@ol8 ~]#
+
+
+[root@ol8 ~]# myArray=(foo1 foo2 foo3)
+[root@ol8 ~]# echo ${myArray[@]}
+foo1 foo2 foo3
+[root@ol8 ~]#
+
+
+[root@ol8 ~]# VAR="this is a test"
+[root@ol8 ~]# echo "${VAR:0:7}"
+this is
+[root@ol8 ~]# echo "${VAR:2:5}"
+is is
+[root@ol8 ~]# echo "${VAR:5}"
+is a test
+[root@ol8 ~]#
+
+
+[root@ol8 ~]# myArray=(foo1 foo2 foo3 foo4 foo5)
+[root@ol8 ~]# echo ${myArray[@]:0:3}
+foo1 foo2 foo3
+[root@ol8 ~]# echo ${myArray[@]:3}
+foo4 foo5
+[root@ol8 ~]#
+
+
+[root@ol8 ~]# myArray=(foo1 foo2 foo3 foo4 foo5)
+[root@ol8 ~]# VAR="this is a test"
+[root@ol8 ~]# echo ${#myArray[@]}
+5
+[root@ol8 ~]# echo ${#VAR}
+14
+[root@ol8 ~]#
+
+
+[root@ol8 ~]# VAR="this is a test"
+[root@ol8 ~]# echo ${VAR%test}
+this is a
+[root@ol8 ~]# echo ${VAR#this}
+is a test
+[root@ol8 ~]#
+
+
+
+[root@ol8 ~]# VAR="this is a test"
+[root@ol8 ~]# echo ${VAR%s*}    #this is a test
+this is a te
+[root@ol8 ~]# echo ${VAR%%s*}   #this is a test
+thi
+[root@ol8 ~]# echo ${VAR#*s}    #this is a test
+is a test
+[root@ol8 ~]# echo ${VAR##*s}   #this is a test
+t
+[root@ol8 ~]#
+
+
+[root@ol8 ~]# VAR="this is a test"
+[root@ol8 ~]# echo "${VAR^}"
+This is a test
+[root@ol8 ~]# echo "${VAR^^}"
+THIS IS A TEST
+[root@ol8 ~]#
+
+
+
+
+
+
