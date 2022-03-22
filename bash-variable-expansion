@@ -63,6 +63,8 @@ t
 This is a test
 [root@ol8 ~]# echo "${VAR^^}"
 THIS IS A TEST
+[root@ol8 ~]# echo "${VAR^^i}"
+thIs Is a test
 [root@ol8 ~]#
 
 
