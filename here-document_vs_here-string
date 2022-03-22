@@ -1,0 +1,30 @@
+
+Use ( << ) here-sting if you want to pass a simple string, a stdout of a command, or a variable to other command as stdin.
+
+example1:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[root@ol8 ~]# tr "o" "@" <<< "foo"
+f@@
+[root@ol8 ~]#
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+example2:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[root@ol8 ~]# VAR='foo'
+[root@ol8 ~]# tr "o" "@" <<< "$VAR"
+f@@
+[root@ol8 ~]#
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+example3:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[root@ol8 ~]# VAR='foo'
+[root@ol8 ~]# tr "o" "@" <<< "$(echo foo)"
+f@@
+[root@ol8 ~]#
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
