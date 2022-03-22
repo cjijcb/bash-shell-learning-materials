@@ -1,6 +1,6 @@
+WHEN TO USE HERE-STRING?
 
-Use ( << ) here-sting if you want to pass a simple string, a stdout of a command, or a variable to other command as stdin.
-
+Use ( << ) here-sting if you want to pass a simple string to a command as stdin.
 example1:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 [root@ol8 ~]# tr "o" "@" <<< "foo"
@@ -8,6 +8,7 @@ f@@
 [root@ol8 ~]#
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Use ( << ) here-sting if you want to pass a variable to a command as stdin
 example2:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 [root@ol8 ~]# VAR='foo'
@@ -16,6 +17,7 @@ f@@
 [root@ol8 ~]#
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Use ( << ) here-sting if you want to pass an output of a command to another command as stdin
 example3:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 [root@ol8 ~]# VAR='foo'
@@ -23,6 +25,20 @@ example3:
 f@@
 [root@ol8 ~]#
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Use ( << ) here-sting to an interactive command to pass a stdin.
+example4:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[root@ol8 ~]# useradd foo
+[root@ol8 ~]# passwd foo <<< $(echo -e "fooPassword\nfooPassword")
+Changing password for user foo.
+New password: Retype new password: passwd: all authentication tokens updated successfully.
+[root@ol8 ~]#
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+WHEN TO USE HERE-DOCUMENT?
 
 
 
