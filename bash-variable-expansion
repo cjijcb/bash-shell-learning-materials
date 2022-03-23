@@ -59,13 +59,88 @@ t
 
 
 [root@ol8 ~]# VAR="this is a test"
+[root@ol8 ~]# myArray=(foo1 foo2 foo3 foo4 foo5)
 [root@ol8 ~]# echo "${VAR^}"
 This is a test
 [root@ol8 ~]# echo "${VAR^^}"
 THIS IS A TEST
 [root@ol8 ~]# echo "${VAR^^i}"
 thIs Is a test
+[root@ol8 ~]# echo "${myArray[@]^}"
+Foo1 Foo2 Foo3 Foo4 Foo5
+[root@ol8 ~]# echo "${myArray[@]^^}"
+FOO1 FOO2 FOO3 FOO4 FOO5
+[root@ol8 ~]# echo "${myArray[@]^^o}"
+fOO1 fOO2 fOO3 fOO4 fOO5
 [root@ol8 ~]#
+
+
+
+[root@ol8 ~]# VAR="THIS IS A TEST"
+[root@ol8 ~]# myArray=(FOO1 FOO2 FOO3 FOO4 FOO5)
+[root@ol8 ~]# echo "${VAR,}"
+tHIS IS A TEST
+[root@ol8 ~]# echo "${VAR,,}"
+this is a test
+[root@ol8 ~]# echo "${VAR,,I}"
+THiS iS A TEST
+[root@ol8 ~]# echo "${myArray[@],}"
+fOO1 fOO2 fOO3 fOO4 fOO5
+[root@ol8 ~]# echo "${myArray[@],,}"
+foo1 foo2 foo3 foo4 foo5
+[root@ol8 ~]# echo "${myArray[@],,O}"
+Foo1 Foo2 Foo3 Foo4 Foo5
+[root@ol8 ~]#
+
+[root@ol8 ~]# VAR="THIS IS a test"
+[root@ol8 ~]# myArray=(FOO1 FOO2 foo3 foo4)
+[root@ol8 ~]# echo "${VAR~~}"
+this is A TEST
+[root@ol8 ~]# echo "${myArray[@]~~}"
+foo1 foo2 FOO3 FOO4
+[root@ol8 ~]#
+
+
+[root@ol8 ~]# VAR="this is a test"
+[root@ol8 ~]# myArray=(foo1 foo2 foo3 foo4 foo5)
+[root@ol8 ~]# echo ${VAR/s/r}
+thir is a test
+[root@ol8 ~]# echo ${VAR/%test/bash}
+this is a bash
+[root@ol8 ~]# echo ${VAR/#this/bash}
+bash is a test
+[root@ol8 ~]# echo ${myArray[@]/#f/Y}
+Yoo1 Yoo2 Yoo3 Yoo4 Yoo5
+[root@ol8 ~]# echo ${myArray[@]/%4/Y}
+foo1 foo2 foo3 fooY foo5
+[root@ol8 ~]# echo ${myArray[@]/o/#}
+f#o1 f#o2 f#o3 f#o4 f#o5
+[root@ol8 ~]# echo ${myArray[@]//o/#}
+f##1 f##2 f##3 f##4 f##5
+[root@ol8 ~]#
+
+
+[root@ol8 ~]# UNDEFINED=
+[root@ol8 ~]# DEFINED="here"
+[root@ol8 ~]# echo "${UNDIFINED:-the variable is undefined}"
+the variable is undefined
+[root@ol8 ~]# echo "${DEFINED:-the variable is undefined}"
+here
+[root@ol8 ~]# echo "${UNDIFINED:+the variable is undefined}"
+
+[root@ol8 ~]#
+[root@ol8 ~]# echo "${DEFINED:+the variable is undefined}"
+the variable is undefined
+[root@ol8 ~]# echo "${UNDIFINED:?the variable is undefined}"
+-bash: UNDIFINED: the variable is undefined
+[root@ol8 ~]#
+
+
+
+
+
+
+
 
 
 
