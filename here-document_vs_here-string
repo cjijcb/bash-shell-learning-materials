@@ -1,11 +1,11 @@
-This document is created by cjijcb
+THIS DOCUMENT IS CREATED BY CJIJCB
 
 TABLE OF CONTENTS
 * when to use here-string ---------------- line 8
 * when to use here-document -------------- line 48
 
 
-WHEN TO USE HERE-STRING?
+WHEN TO USE HERE-STRING
 
 Use here-sting (<<<) if you want to pass a simple string to a command as stdin.
 example1:
@@ -45,7 +45,7 @@ New password: Retype new password: passwd: all authentication tokens updated suc
 
 
 
-WHEN TO USE HERE-DOCUMENT?
+WHEN TO USE HERE-DOCUMENT
 
 Use here-document (<<) if you want to pass a multiple line of string to a commmand as stdin.
 example5:
