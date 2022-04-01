@@ -142,9 +142,9 @@ bash-4.4$
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 bash-4.4$ VAR="this is a test"
 bash-4.4$ myArray=(foo1 foo2 foo3 foo4 foo5)
-bash-4.4$ echo ${VAR/is/r}            # subtitute first occuring "is" with "rr" 
+bash-4.4$ echo ${VAR/is/rr}            # subtitute first occuring "is" with "rr" 
 thrr is a test
-bash-4.4$ echo ${VAR//is/r}           # subtitute all occuring "is" with "rr" 
+bash-4.4$ echo ${VAR//is/rr}           # subtitute all occuring "is" with "rr" 
 thrr rr a test
 bash-4.4$ echo ${VAR/%test/bash}      # subtitute suffix "test" with "bash"
 this is a bash
