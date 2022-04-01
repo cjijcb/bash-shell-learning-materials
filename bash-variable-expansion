@@ -15,166 +15,166 @@ THIS DOCUMENT IS CREATED BY CJIJCB
 
 (1) Accessing an element of an array
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-[root@ol8 ~]# myArray=(foo1 foo2 foo3)
-[root@ol8 ~]# echo ${myArray[1]}
+bash-4.4$ myArray=(foo1 foo2 foo3)
+bash-4.4$ echo ${myArray[1]}
 foo2
-[root@ol8 ~]#
+bash-4.4$
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 (2) Accessing all elements of an array
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-[root@ol8 ~]# myArray=(foo1 foo2 foo3)
-[root@ol8 ~]# echo ${myArray[@]}
+bash-4.4$ myArray=(foo1 foo2 foo3)
+bash-4.4$ echo ${myArray[@]}
 foo1 foo2 foo3
-[root@ol8 ~]#
+bash-4.4$
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 (3) Getting specific characters on a string
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-[root@ol8 ~]# VAR="this is a test"
-[root@ol8 ~]# echo "${VAR:0:8}"     # from position 0 get 8 characters
+bash-4.4$ VAR="this is a test"
+bash-4.4$ echo "${VAR:0:8}"     # from position 0 get 8 characters
 this is a
-[root@ol8 ~]# echo "${VAR:2:5}"     # from position 2 get 5 characters    
+bash-4.4$ echo "${VAR:2:5}"     # from position 2 get 5 characters    
 is is
-[root@ol8 ~]# echo "${VAR:5}"       # form position 5 get all characters preceding it
+bash-4.4$ echo "${VAR:5}"       # form position 5 get all characters preceding it
 is a test
-[root@ol8 ~]#
+bash-4.4$
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 (4) Accessing a range of elements of an array
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-[root@ol8 ~]# myArray=(foo1 foo2 foo3 foo4 foo5)
-[root@ol8 ~]# echo ${myArray[@]:0:3}     # from position 0 get 3 elements
+bash-4.4$ myArray=(foo1 foo2 foo3 foo4 foo5)
+bash-4.4$ echo ${myArray[@]:0:3}     # from position 0 get 3 elements
 foo1 foo2 foo3
-[root@ol8 ~]# echo ${myArray[@]:3}       # from position 3 get all elements preceding it.
+bash-4.4$ echo ${myArray[@]:3}       # from position 3 get all elements preceding it.
 foo4 foo5
-[root@ol8 ~]#
+bash-4.4$
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 (5) Getting number of elements or characters
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-[root@ol8 ~]# myArray=(foo1 foo2 foo3 foo4 foo5)
-[root@ol8 ~]# VAR="this is a test"
-[root@ol8 ~]# echo ${#myArray[@]}
+bash-4.4$ myArray=(foo1 foo2 foo3 foo4 foo5)
+bash-4.4$ VAR="this is a test"
+bash-4.4$ echo ${#myArray[@]}
 5
-[root@ol8 ~]# echo ${#VAR}
+bash-4.4$ echo ${#VAR}
 14
-[root@ol8 ~]#
+bash-4.4$
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 (6) Cutting the suffix and prefix off of a string
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-[root@ol8 ~]# VAR="this is a test"
-[root@ol8 ~]# echo ${VAR%test}
+bash-4.4$ VAR="this is a test"
+bash-4.4$ echo ${VAR%test}
 this is a
-[root@ol8 ~]# echo ${VAR#this}
+bash-4.4$ echo ${VAR#this}
 is a test
-[root@ol8 ~]# echo ${VAR%s*}    
+bash-4.4$ echo ${VAR%s*}    
 this is a te
-[root@ol8 ~]# echo ${VAR%%s*}   
+bash-4.4$ echo ${VAR%%s*}   
 thi
-[root@ol8 ~]# echo ${VAR#*s}    
+bash-4.4$ echo ${VAR#*s}    
 is a test
-[root@ol8 ~]# echo ${VAR##*s}  
+bash-4.4$ echo ${VAR##*s}  
 t
-[root@ol8 ~]#
+bash-4.4$
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 (7) Making characters uppercase
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-[root@ol8 ~]# VAR="this is a test"
-[root@ol8 ~]# myArray=(foo1 foo2 foo3 foo4 foo5)
-[root@ol8 ~]# echo "${VAR^}"              # make the first character uppercase 
+bash-4.4$ VAR="this is a test"
+bash-4.4$ myArray=(foo1 foo2 foo3 foo4 foo5)
+bash-4.4$ echo "${VAR^}"              # make the first character uppercase 
 This is a test
-[root@ol8 ~]# echo "${VAR^^}"             # make all character uppercase 
+bash-4.4$ echo "${VAR^^}"             # make all character uppercase 
 THIS IS A TEST
-[root@ol8 ~]# echo "${VAR^^i}"            # make all letter "i" uppercase
+bash-4.4$ echo "${VAR^^i}"            # make all letter "i" uppercase
 thIs Is a test
-[root@ol8 ~]# echo "${myArray[@]^}"       # make the first character uppercase on all elements
+bash-4.4$ echo "${myArray[@]^}"       # make the first character uppercase on all elements
 Foo1 Foo2 Foo3 Foo4 Foo5
-[root@ol8 ~]# echo "${myArray[@]^^}"      # make all character uppercase on all elements
+bash-4.4$ echo "${myArray[@]^^}"      # make all character uppercase on all elements
 FOO1 FOO2 FOO3 FOO4 FOO5
-[root@ol8 ~]# echo "${myArray[@]^^o}"     # make all letter "o" uppercase on all elements
+bash-4.4$ echo "${myArray[@]^^o}"     # make all letter "o" uppercase on all elements
 fOO1 fOO2 fOO3 fOO4 fOO5
-[root@ol8 ~]#
+bash-4.4$
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 (8) Making characters lowercase
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-[root@ol8 ~]# VAR="THIS IS A TEST"
-[root@ol8 ~]# myArray=(FOO1 FOO2 FOO3 FOO4 FOO5)
-[root@ol8 ~]# echo "${VAR,}"               # make the first character lowercase
+bash-4.4$ VAR="THIS IS A TEST"
+bash-4.4$ myArray=(FOO1 FOO2 FOO3 FOO4 FOO5)
+bash-4.4$ echo "${VAR,}"               # make the first character lowercase
 tHIS IS A TEST
-[root@ol8 ~]# echo "${VAR,,}"              # make all character lowercase
+bash-4.4$ echo "${VAR,,}"              # make all character lowercase
 this is a test
-[root@ol8 ~]# echo "${VAR,,I}"             # make all letter "I" lowercase
+bash-4.4$ echo "${VAR,,I}"             # make all letter "I" lowercase
 THiS iS A TEST
-[root@ol8 ~]# echo "${myArray[@],}"        # make the first character lowercase on all elements
+bash-4.4$ echo "${myArray[@],}"        # make the first character lowercase on all elements
 fOO1 fOO2 fOO3 fOO4 fOO5
-[root@ol8 ~]# echo "${myArray[@],,}"       # make all character lowercase on all elements
+bash-4.4$ echo "${myArray[@],,}"       # make all character lowercase on all elements
 foo1 foo2 foo3 foo4 foo5
-[root@ol8 ~]# echo "${myArray[@],,O}"      # make all letter "o" lowercase on all elements
+bash-4.4$ echo "${myArray[@],,O}"      # make all letter "o" lowercase on all elements
 Foo1 Foo2 Foo3 Foo4 Foo5
-[root@ol8 ~]#
+bash-4.4$
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 (9) Reversing characters cases
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-[root@ol8 ~]# VAR="THIS IS a test"
-[root@ol8 ~]# myArray=(FOO1 FOO2 foo3 foo4)
-[root@ol8 ~]# echo "${VAR~~}"
+bash-4.4$ VAR="THIS IS a test"
+bash-4.4$ myArray=(FOO1 FOO2 foo3 foo4)
+bash-4.4$ echo "${VAR~~}"
 this is A TEST
-[root@ol8 ~]# echo "${myArray[@]~~}"
+bash-4.4$ echo "${myArray[@]~~}"
 foo1 foo2 FOO3 FOO4
-[root@ol8 ~]#
+bash-4.4$
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 (10) String subtitutions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-[root@ol8 ~]# VAR="this is a test"
-[root@ol8 ~]# myArray=(foo1 foo2 foo3 foo4 foo5)
-[root@ol8 ~]# echo ${VAR/is/r}            # subtitute first occuring "is" with "rr" 
+bash-4.4$ VAR="this is a test"
+bash-4.4$ myArray=(foo1 foo2 foo3 foo4 foo5)
+bash-4.4$ echo ${VAR/is/r}            # subtitute first occuring "is" with "rr" 
 thrr is a test
-[root@ol8 ~]# echo ${VAR//is/r}           # subtitute all occuring "is" with "rr" 
+bash-4.4$ echo ${VAR//is/r}           # subtitute all occuring "is" with "rr" 
 thrr rr a test
-[root@ol8 ~]# echo ${VAR/%test/bash}      # subtitute suffix "test" with "bash"
+bash-4.4$ echo ${VAR/%test/bash}      # subtitute suffix "test" with "bash"
 this is a bash
-[root@ol8 ~]# echo ${VAR/#this/bash}      # subtitute preffix "this" with "bash"
+bash-4.4$ echo ${VAR/#this/bash}      # subtitute preffix "this" with "bash"
 bash is a test
-[root@ol8 ~]# echo ${myArray[@]/#f/Y}     # subtitute first occuring "f" with "Y" on all elements
+bash-4.4$ echo ${myArray[@]/#f/Y}     # subtitute first occuring "f" with "Y" on all elements
 Yoo1 Yoo2 Yoo3 Yoo4 Yoo5
-[root@ol8 ~]# echo ${myArray[@]//o/#}     # subtitute all occuring "o" with "#" on all elements
+bash-4.4$ echo ${myArray[@]//o/#}     # subtitute all occuring "o" with "#" on all elements
 f##1 f##2 f##3 f##4 f##5
-[root@ol8 ~]# echo ${myArray[@]/%4/Y}     # subtitute suffix "4" with "Y" on all elements
+bash-4.4$ echo ${myArray[@]/%4/Y}     # subtitute suffix "4" with "Y" on all elements
 foo1 foo2 foo3 fooY foo5
-[root@ol8 ~]# echo ${myArray[@]/o/#}      # subtitute preffix "o" with "#" on all elements
+bash-4.4$ echo ${myArray[@]/o/#}      # subtitute preffix "o" with "#" on all elements
 f#o1 f#o2 f#o3 f#o4 f#o5
-[root@ol8 ~]#
+bash-4.4$
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 (11) Handling undefined and defined variables
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-[root@ol8 ~]# UNDEFINED=
-[root@ol8 ~]# DEFINED="here"
-[root@ol8 ~]# echo "${UNDIFINED:-the variable is undefined}"    # return "the variable is undefined" if variable is undefined
+bash-4.4$ UNDEFINED=
+bash-4.4$ DEFINED="here"
+bash-4.4$ echo "${UNDIFINED:-the variable is undefined}"    # return "the variable is undefined" if variable is undefined
 the variable is undefined
-[root@ol8 ~]# echo "${DEFINED:-the variable is undefined}"      # return the value of the variable if it is defined
+bash-4.4$ echo "${DEFINED:-the variable is undefined}"      # return the value of the variable if it is defined
 here
-[root@ol8 ~]# echo "${UNDIFINED:+the variable is undefined}"    # return the value of the variable if it is undefined
+bash-4.4$ echo "${UNDIFINED:+the variable is undefined}"    # return the value of the variable if it is undefined
 
-[root@ol8 ~]# echo "${DEFINED:+the variable is undefined}"      # return "the variable is undefined" if variable is defined
+bash-4.4$ echo "${DEFINED:+the variable is undefined}"      # return "the variable is undefined" if variable is defined
 the variable is undefined
-[root@ol8 ~]# echo "${UNDIFINED:?the variable is undefined}"    # throw an error if variable is undefined
+bash-4.4$ echo "${UNDIFINED:?the variable is undefined}"    # throw an error if variable is undefined
 -bash: UNDIFINED: the variable is undefined
-[root@ol8 ~]#
+bash-4.4$
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
