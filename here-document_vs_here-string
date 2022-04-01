@@ -10,37 +10,37 @@ WHEN TO USE HERE-STRING
 Use here-sting (<<<) if you want to pass a simple string to a command as stdin.
 example1:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-[root@ol8 ~]# tr "o" "@" <<< "foo"
+bash-4.4$ tr "o" "@" <<< "foo"
 f@@
-[root@ol8 ~]#
+bash-4.4$
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Use here-sting (<<<) if you want to pass a variable to a command as stdin
 example2:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-[root@ol8 ~]# VAR='foo'
-[root@ol8 ~]# tr "o" "@" <<< "$VAR"
+bash-4.4$ VAR='foo'
+bash-4.4$ tr "o" "@" <<< "$VAR"
 f@@
-[root@ol8 ~]#
+bash-4.4$
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Use here-sting (<<<) if you want to pass an output of a command to another command as stdin
 example3:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-[root@ol8 ~]# VAR='foo'
-[root@ol8 ~]# tr "o" "@" <<< "$(echo foo)"
+bash-4.4$ VAR='foo'
+bash-4.4$ tr "o" "@" <<< "$(echo foo)"
 f@@
-[root@ol8 ~]#
+bash-4.4$
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 here-sting (<<<) can be use to an interactive command to pass a stdin.
 example4:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-[root@ol8 ~]# useradd foo
-[root@ol8 ~]# passwd foo <<< $(echo -e "fooPassword\nfooPassword")
+bash-4.4$ useradd foo
+bash-4.4$ passwd foo <<< $(echo -e "fooPassword\nfooPassword")
 Changing password for user foo.
 New password: Retype new password: passwd: all authentication tokens updated successfully.
-[root@ol8 ~]#
+bash-4.4$
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -50,7 +50,7 @@ WHEN TO USE HERE-DOCUMENT
 Use here-document (<<) if you want to pass a multiple line of string to a commmand as stdin.
 example5:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-[root@ol8 ~]# tr "o" "@" << EOF
+bash-4.4$ tr "o" "@" << EOF
 > foo1
 > foo2
 > foo3
@@ -58,28 +58,28 @@ example5:
 f@@1
 f@@2
 f@@3
-[root@ol8 ~]#
+bash-4.4$
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 here-document (<<) can be use to create a new file with text in it
 example6:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-[root@ol8 ~]# cat << EOF > foofile
+bash-4.4$ cat << EOF > foofile
 > foo1
 > foo2
 > foo3
 > EOF
-[root@ol8 ~]# cat foofile
+bash-4.4$ cat foofile
 foo1
 foo2
 foo3
-[root@ol8 ~]#
+bash-4.4$
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 here-document (<<) can take a pipe (|) or logical operators ( &&, || )
 example7:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-[root@ol8 ~]# cat << EOF | tr "o" "@"
+bash-4.4$ cat << EOF | tr "o" "@"
 > foo1
 > foo2
 > foo3
@@ -87,6 +87,5 @@ example7:
 f@@1
 f@@2
 f@@3
-[root@ol8 ~]#
+bash-4.4$
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
